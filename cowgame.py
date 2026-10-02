@@ -47,8 +47,11 @@ anpcs.append(npc3.name)
 pcow = cow(pcownam, pcowgen, pcowhun, pcowloc)
 
 while True:
+	if pcow.hunger == 0:
+		print(pcow.name + " died of hunger!")
+		break
 	act = input(">_	")
-	pcow.hunger = pcow.hunger - 0.001
+	pcow.hunger = pcow.hunger - 1
 	if act == "char":
 		print(pcow.name + "\n" + pcow.gender + "\n" + pcow.loc + "\n" +  str(int(pcow.hunger)) + "\n")
 	elif act == "eat":
